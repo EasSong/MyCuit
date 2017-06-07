@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.cuit.model.User" table="user_tab">
+        <id name="uId">
+            <column name="u_id"/>
+        </id>
+        <property name="uName">
+            <column name="u_name"/>
+        </property>
+        <property name="uNumber">
+            <column name="u_number"/>
+        </property>
+        <property name="uPassword">
+            <column name="u_password"/>
+        </property>
+        <property name="uType">
+            <column name="u_type"/>
+        </property>
+        <property name="clsId">
+            <column name="cls_id"/>
+        </property>
+    </class>
+</hibernate-mapping>

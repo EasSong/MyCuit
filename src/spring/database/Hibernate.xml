@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/db_mycuit" />
+        <property name="username" value="root" />
+        <property name="password" value="song52406" />
+    </bean>-->
+
+    <bean id="sessionFactory"
+            class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <!--<prop key="hibernate.show_sql">true</prop>-->
+                <prop key="hibernate.current_session_context_class">thread</prop>
+            </props>
+        </property>
+
+        <property name="mappingResources">
+            <list>
+                <!--hbm -->
+                <value>hibernate/Answer.hbm.xml</value>
+                <value>hibernate/Class.hbm.xml</value>
+                <value>hibernate/College.hbm.xml</value>
+                <value>hibernate/Course.hbm.xml</value>
+                <value>hibernate/QtlToQt.hbm.xml</value>
+                <value>hibernate/Question.hbm.xml</value>
+                <value>hibernate/QuestionsList.hbm.xml</value>
+                <value>hibernate/StuToTTC.hbm.xml</value>
+                <value>hibernate/Task.hbm.xml</value>
+                <value>hibernate/TeacherToCourse.hbm.xml</value>
+                <value>hibernate/User.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--<bean id="administratorBo" class="cn.cuit.bo.impl.AdministratorBoImpl">
+        <property name="administratorDao" ref="administratorDao"/>
+    </bean>
+    <bean id="administratorDao" class="cn.cuit.dao.impl.AdministratorDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>-->
+</beans>

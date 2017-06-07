@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.cuit.model.Answer" table="answer_tab">
+        <id name="ans_Id">
+            <column name="ans_id"/>
+        </id>
+        <property name="ans_Context">
+            <column name="ans_context"/>
+        </property>
+        <property name="qtq_Id">
+            <column name="qtq_id"/>
+        </property>
+    </class>
+</hibernate-mapping>

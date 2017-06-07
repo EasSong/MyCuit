@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.cuit.model.TeacherToCourse" table="teachertocourse_tab">
+        <id name="ttc_Id">
+            <column name="ttc_id"/>
+        </id>
+        <property name="u_number">
+            <column name="u_number"/>
+        </property>
+        <property name="cou_Id">
+            <column name="cou_id"/>
+        </property>
+        <property name="ttc_type">
+            <column name="ttc_type"/>
+        </property>
+        <property name="ttc_time">
+            <column name="ttc_time"/>
+        </property>
+        <property name="ttc_credit">
+            <column name="ttc_credit"/>
+        </property>
+        <property name="cls_id">
+            <column name="cls_id"/>
+        </property>
+    </class>
+</hibernate-mapping>

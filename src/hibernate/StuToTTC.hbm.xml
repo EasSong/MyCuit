@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.cuit.model.StuToTTC" table="stutottc_tab">
+        <id name="stt_Id">
+            <column name="stt_id"/>
+        </id>
+        <property name="u_Number">
+            <column name="u_number"/>
+        </property>
+        <property name="ttc_Id">
+            <column name="ttc_id"/>
+        </property>
+    </class>
+</hibernate-mapping>

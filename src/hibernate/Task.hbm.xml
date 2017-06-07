@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.cuit.model.Task" table="task_tab">
+        <id name="tk_Id">
+            <column name="tk_id"/>
+        </id>
+        <property name="tk_Name">
+            <column name="tk_name"/>
+        </property>
+        <property name="tk_Begin">
+            <column name="tk_begin"/>
+        </property>
+        <property name="tk_End">
+            <column name="tk_end"/>
+        </property>
+        <property name="ql_Id">
+            <column name="ql_id"/>
+        </property>
+        <property name="ttc_id">
+            <column name="ttc_id"/>
+        </property>
+    </class>
+</hibernate-mapping>

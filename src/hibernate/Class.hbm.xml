@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.cuit.model.Class" table="class_tab">
+        <id name="cls_id">
+            <column name="cls_id"/>
+        </id>
+        <property name="cls_name">
+            <column name="cls_name"/>
+        </property>
+        <property name="clg_id">
+            <column name="clg_id"/>
+        </property>
+    </class>
+</hibernate-mapping>

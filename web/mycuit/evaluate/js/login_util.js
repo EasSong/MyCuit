@@ -31,12 +31,8 @@ function checkLogin() {
         url:"/evaluate/checkLogin.do",
         dataType: "json",
         success: function (jsonData) {
-            var url = location.toString().split("/");
-            if (jsonData.state == "login" && url[url.length-1] == "login.html"){
+            if (jsonData.state == "login"){
                 window.location = "starter.html";
-            }
-            else if (jsonData.state == "logout" && url[url.length-1] == "starter.html"){
-                window.location = "login.html";
             }
         }
     });

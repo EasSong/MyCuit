@@ -7,4 +7,5 @@ import java.util.List;
  */
 public interface TaskDao {
     List getTaskInfoByTTCId(String ttcId);
+    String getTaskStateForUser(String userNumber, String tkId);
 }

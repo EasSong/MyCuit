@@ -27,4 +27,21 @@ public class TaskDaoImpl implements TaskDao {
         session.getTransaction().commit();
         return listData;
     }
+
+    @Override
+    public String getTaskStateForUser(String userNumber, String tkId) {
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        String sqlStr = "select * from task_state_tab where tk_id="+tkId+" and u_number="+userNumber;
+        Query sqlQuery = session.createNativeQuery(sqlStr);
+        List listData = sqlQuery.getResultList();
+        session.getTransaction().commit();
+        String result = "0";
+        if (listData.size() <= 0){
+            result = "0";
+        }else{
+            result = (String)((Object[])listData.get(0))[3];
+        }
+        return result;
+    }
 }

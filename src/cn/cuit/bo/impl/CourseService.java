@@ -30,7 +30,7 @@ public class CourseService {
             Object[] row = (Object[])obj;
             String couType = String.valueOf(row[2]);
             JSONObject jsonCou = new JSONObject();
-            JSONArray taskJsonArr = AppUtil.getTaskService().getTaskInfoByTTCId(String.valueOf(row[6]));
+            JSONArray taskJsonArr = AppUtil.getTaskService().getTaskInfoByTTCId(String.valueOf(row[6]),uNumber);
             jsonCou.put("teacherName",row[1]);
             jsonCou.put("couTime",row[3]);
             jsonCou.put("couCredit",row[4]);

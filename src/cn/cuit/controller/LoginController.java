@@ -70,10 +70,6 @@ public class LoginController {
                 System.out.println("user is login!");
                 jsonData.put("state","login");
                 jsonData.put("user",user);
-                CourseService courseService = AppUtil.getCourseService();
-                JSONObject jsonCourse = courseService.getCourseByUserNumber(user.getString("uNumber"));
-                jsonData.put("course",jsonCourse);
-                System.out.println(jsonCourse);
             } else {
                 System.err.println("user is logout!");
                 jsonData.put("state","logout");

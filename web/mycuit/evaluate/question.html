@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="ionicons-2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../plugins/iCheck/all.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
@@ -23,9 +24,74 @@
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
+
+    <!-- My Js-->
+    <script src="js/js_util.js"></script>
+    <script src="js/starter_util.js"></script>
 </head>
+<style>
+    .select-input{
+        margin-right: 30px;
+        font-weight: normal;
+        vertical-align: text-bottom;
+    }
+</style>
 <body>
-    <p>qjuashg</p>
+<div class="box box-widget">
+    <div class="box-header with-border">
+        <div class="user-block">
+            <span class="username" style="margin-left: 0" id="question-list-name">Question List Name</span>
+            <span class="description" style="margin-left: 0" id="time-deadline">2017-03-03至2017-04-01</span>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body" id="box-form-question">
+    <!--    <div class="form-group">
+            <label>1.题目1</label><br/>
+            <input type="hidden" value="">
+            <label class="select-input">
+                <input name="r1" class="minimal" type="radio" checked>
+                <span>答案1</span>
+            </label>
+            <label class="select-input">
+                <input name="r1" class="minimal" type="radio">
+                <span>答案2</span>
+            </label>
+            <label class="select-input">
+                <input name="r1" class="minimal" type="radio">
+                <span>答案3</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>2.题目2</label><br/>
+            <input type="hidden" value="">
+            <label class="select-input">
+                <input class="minimal" type="checkbox">
+                <span>答案1</span>
+            </label>
+            <label class="select-input">
+                <input class="minimal" type="checkbox">
+                <span>答案2</span>
+            </label>
+            <label class="select-input">
+                <input class="minimal" type="checkbox">
+                <span>答案3</span>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>1.题目3</label>
+            <textarea class="form-control" rows="1" placeholder="Enter ..."></textarea>
+        </div>-->
+        <p>选择任意任务进行答题</p>
+    </div>
+    <!-- /.box-body -->
+    <!-- /.box-footer -->
+    <input type="hidden" name="hidden-ts-id" id="hidden-ts-id" value="">
+    <div class="box-footer">
+        <button type="button" class="btn btn-block btn-info" style="margin: 0 auto;width: 100px" onclick="submitAnswer()">提交</button>
+    </div>
+    <!-- /.box-footer -->
+</div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
@@ -36,6 +102,19 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/app.min.js"></script>
+<script src="../plugins/iCheck/icheck.min.js"></script>
 </body>
-
+<script>
+    $(function () {
+        //iCheck for checkbox and radio inputs
+        getQuestionInfo();
+        setStyleInput();
+    });
+    function setStyleInput() {
+        $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+            checkboxClass: 'icheckbox_minimal-blue',
+            radioClass: 'iradio_minimal-blue'
+        });
+    }
+</script>
 </html>

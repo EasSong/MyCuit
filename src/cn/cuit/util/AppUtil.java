@@ -1,5 +1,6 @@
 package cn.cuit.util;
 
+import cn.cuit.bo.impl.AnswerService;
 import cn.cuit.bo.impl.CourseService;
 import cn.cuit.bo.impl.TaskService;
 import cn.cuit.bo.impl.UserService;
@@ -25,5 +26,8 @@ public class AppUtil {
     }
     public static TaskService getTaskService(){
         return (TaskService)getAppContext().getBean("taskService");
+    }
+    public static AnswerService getAnswerService(){
+        return (AnswerService)getAppContext().getBean("answerService");
     }
 }

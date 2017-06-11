@@ -3,14 +3,12 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="cn.cuit.model.Answer" table="answer_tab">
-        <id name="ans_Id">
-            <column name="ans_id"/>
-        </id>
+        <composite-id>
+            <key-property name="qtq_Id" column="qtq_id"/>
+            <key-property name="ts_Id" column="ts_id"/>
+        </composite-id>
         <property name="ans_Context">
             <column name="ans_context"/>
-        </property>
-        <property name="qtq_Id">
-            <column name="qtq_id"/>
         </property>
     </class>
 </hibernate-mapping>

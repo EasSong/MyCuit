@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CUIT | Evaluate</title>
+    <link rel="shortcut icon" href="ico/logo-ico-48x48.ico" type="image/x-ico"/>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.min.css" >
+    <link rel="stylesheet" href="ionicons-2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../plugins/iCheck/all.css">
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect.
+    -->
+    <link rel="stylesheet" href="../dist/css/skins/skin-black-light.min.css">
+    <link rel="stylesheet" href="../plugins/datatables/dataTables.bootstrap.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+
+    <!-- My Js-->
+
+</head>
+<style>
+    .select-input{
+        margin-right: 30px;
+        font-weight: normal;
+        vertical-align: text-bottom;
+    }
+</style>
+<body>
+<div class="box box-widget">
+    <div class="box-header with-border">
+        <div class="user-block">
+            <span class="username" style="margin-left: 0" id="question-list-name">Show Information manager name</span>
+            <span class="description" style="margin-left: 0" id="time-deadline">show information description</span>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body" id="box-form-question">
+        <div class="row">
+            <div class="col-sm-6">
+                <button type="button" class="btn btn-default">Add</button>
+                <button type="button" class="btn btn-default">Reload</button>
+                <button type="button" class="btn btn-default">Rollback</button>
+            </div>
+            <div class="col-sm-6">
+                <div class="box-tools pull-right">
+                    <div class="input-group" style="width: 200px;">
+                        <input name="table_search" class="form-control pull-right" placeholder="Search" type="text">
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" style="height: 5px"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>Rendering engine</th>
+                        <th>Browser</th>
+                        <th>Platform(s)</th>
+                        <th>Engine version</th>
+                        <th>Operate</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Trident</td>
+                        <td>Internet
+                            Explorer 4.0
+                        </td>
+                        <td>Win 95+</td>
+                        <td> 4</td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-sm">Edit</button>
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Trident</td>
+                        <td>Internet
+                            Explorer 4.0
+                        </td>
+                        <td>Win 95+</td>
+                        <td> 4</td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-sm">Edit</button>
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Trident</td>
+                        <td>Internet
+                            Explorer 4.0
+                        </td>
+                        <td>Win 95+</td>
+                        <td> 4</td>
+                        <td>
+                            <button type="button" class="btn btn-default btn-sm">Edit</button>
+                            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+            </div>
+            <div class="col-sm-7">
+                <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                    <ul class="pagination">
+                        <li class="paginate_button previous disabled" id="example2_previous">
+                            <a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a>
+                        </li>
+                        <li class="paginate_button active">
+                            <a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a>
+                        </li>
+                        <li class="paginate_button ">
+                            <a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a>
+                        </li>
+                        <li class="paginate_button ">
+                            <a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a>
+                        </li>
+                        <li class="paginate_button ">
+                            <a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a>
+                        </li>
+                        <li class="paginate_button ">
+                            <a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a>
+                        </li>
+                        <li class="paginate_button ">
+                            <a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a>
+                        </li>
+                        <li class="paginate_button next" id="example2_next">
+                            <a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.box-body -->
+</div>
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/app.min.js"></script>
+<script src="../plugins/iCheck/icheck.min.js"></script>
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="../plugins/fastclick/fastclick.js"></script>
+<script src="../dist/js/demo.js"></script>
+</body>
+<script>
+
+</script>
+</html>

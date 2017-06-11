@@ -1,0 +1,12 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean name="answerDao" class="cn.cuit.dao.impl.AnswerDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean name="answerService" class="cn.cuit.bo.impl.AnswerService">
+        <property name="answerDao" ref="answerDao"/>
+    </bean>
+</beans>

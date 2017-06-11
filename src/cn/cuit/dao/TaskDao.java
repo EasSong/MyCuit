@@ -7,5 +7,8 @@ import java.util.List;
  */
 public interface TaskDao {
     List getTaskInfoByTTCId(String ttcId);
-    String getTaskStateForUser(String userNumber, String tkId);
+    String[] getTaskStateForUser(String userNumber, String tkId);
+    List getQuestionListByQlId(String qlId);
+    List getTaskInfoByTkId(String tkId);
+    boolean updateTaskStateForUser(String tsId, int state);
 }

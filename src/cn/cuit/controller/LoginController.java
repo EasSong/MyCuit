@@ -38,7 +38,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/evaluate")
 public class LoginController {
-    private static final String OAUTHCALLBACK = "https://app.cuit.edu.cn/v1/oauth/authorize?grant_type=authorization_code&response_type=code&client_id=cuitevaluate&redirect_uri=http://192.168.1.201:8080/Login/oauthCallback";
+    private static final String OAUTHCALLBACK = "https://app.cuit.edu.cn/v1/oauth/authorize?grant_type=authorization_code&response_type=code&client_id=cuitevaluate&redirect_uri=http://192.168.1.201:8080/evaluate/oauthCallback.do";
 
     @RequestMapping(value = "login.do",method = RequestMethod.GET)
     public String Login(HttpSession session, ModelMap modelMap) {
@@ -49,13 +49,13 @@ public class LoginController {
                 return "redirect:/mycuit/evaluate/starter.html";
             } else {
                 System.err.println("user is logout!");
-                return "redirect:/mycuit/evaluate/login.html";
+                //return "redirect:/mycuit/evaluate/login.html";
+                return "redirect:" + OAUTHCALLBACK;
             }
         } else {
             System.err.println("user not login!");
-            //return "redirect:" + OAUTHCALLBACK;
-            return "redirect:/mycuit/evaluate/login.html";
-            //return "login";
+            return "redirect:" + OAUTHCALLBACK;
+            //return "redirect:/mycuit/evaluate/login.html";
         }
     }
 
@@ -122,7 +122,7 @@ public class LoginController {
                 JSONObject jsonObject = JSONObject.fromObject(content);
                 JSONObject result = jsonObject.getJSONObject("result");
                 System.out.println(content);
-                return "redirect:/Login/getUserInfo.do?tokenType="+result.get("tokenType")+"&accessToken="+result.get("accessToken");
+                return "redirect:/evaluate/getUserInfo.do?tokenType="+result.get("tokenType")+"&accessToken="+result.get("accessToken");
             }
         } catch (ClientProtocolException e) {
             e.printStackTrace();
@@ -152,6 +152,16 @@ public class LoginController {
             if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 result= EntityUtils.toString(response.getEntity(),"utf-8");
                 System.out.println(result);
+                JSONObject jsonUser = JSONObject.fromObject(result).getJSONObject("result");
+                JSONObject user = new JSONObject();
+                user.put("clsId","null");
+                user.put("uId","null");
+                user.put("uName",jsonUser.getString("fullName"));
+                user.put("uNumber",jsonUser.getString("userId"));
+                user.put("uPassword","null");
+                user.put("uType","stu");
+                request.getSession().setAttribute("user",user);
+                return "redirect:/mycuit/evaluate/starter.html";
             }
         } catch (ClientProtocolException e) {
             e.printStackTrace();

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.cuit.model.TaskState" table="task_state_tab">
+        <id name="id">
+            <column name="ts_id"/>
+            <generator class="identity"/>
+        </id>
+        <property name="tkId">
+            <column name="tk_id"/>
+        </property>
+        <property name="uNumber" type="java.lang.String">
+            <column name="u_number" sql-type="varchar(50)"/>
+        </property>
+        <property name="tsState">
+            <column name="ts_state"/>
+        </property>
+    </class>
+</hibernate-mapping>

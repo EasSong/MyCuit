@@ -36,6 +36,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
                 <value>hibernate/Task.hbm.xml</value>
                 <value>hibernate/TeacherToCourse.hbm.xml</value>
                 <value>hibernate/User.hbm.xml</value>
+                <value>hibernate/TaskState.hbm.xml</value>
             </list>
         </property>
     </bean>

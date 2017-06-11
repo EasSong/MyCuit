@@ -9,4 +9,5 @@
     <import resource="../beans/User.xml"/>
     <import resource="../beans/Course.xml"/>
     <import resource="../beans/Task.xml"/>
+    <import resource="../beans/Answer.xml"/>
 </beans>

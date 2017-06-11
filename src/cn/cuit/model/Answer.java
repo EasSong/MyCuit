@@ -1,27 +1,21 @@
 package cn.cuit.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Esong on 2017/5/11.
  */
-public class Answer {
-    private int ans_Id;
-    private StringBuffer ans_Context;
+public class Answer implements Serializable {
+    private String ans_Context;
     private int qtq_Id;
+    private int ts_Id;
 
-    public int getAns_Id() {
-        return ans_Id;
-    }
-
-    public void setAns_Id(int ans_Id) {
-        this.ans_Id = ans_Id;
-    }
-
-    public StringBuffer getAns_Context() {
+    public String getAns_Context() {
         return ans_Context;
     }
 
-    public void setAns_Context(StringBuffer ans_context) {
-        this.ans_Context = ans_context;
+    public void setAns_Context(String ans_Context) {
+        this.ans_Context = ans_Context;
     }
 
     public int getQtq_Id() {
@@ -30,5 +24,13 @@ public class Answer {
 
     public void setQtq_Id(int qtq_Id) {
         this.qtq_Id = qtq_Id;
+    }
+
+    public int getTs_Id() {
+        return ts_Id;
+    }
+
+    public void setTs_Id(int ts_Id) {
+        this.ts_Id = ts_Id;
     }
 }
